@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Document</title>
+</head>
+<body>
+  <section id="services" class="py-30 px-12 md:px-16">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="font-['Space Grotesk' , sans-serif] text-[45px] md:text-[52px] lg:text-[66px] mb-4">Specialized <span
+                class="text-[#a4e6ff]">Solutions</span></h2>
+        <p class="font-['Inter'] text-[20px] md:text-[22px] lg:text-[24px] text-[#bbc9cf]">Delivering high-impact digital products
+            tailored for your business needs.</p>
+    </div>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+      @for (s of services; track s.title) {
+        <div
+            class="glass-card p-10 rounded-4xl hover:-translate-y-2 transition-transform duration-500 group">
+            <div
+                class="w-16 h-16 rounded-2xl bg-[#a4e6ff]/10 flex items-center justify-center mb-8 group-hover:bg-[#a4e6ff] transition-colors">
+                <span
+                    class="material-symbols-outlined text-[#a4e6ff] text-[30px] md:text-[36px] lg:text-[48px] group-hover:text-[#003543]">{{s.logo}}</span>
+            </div>
+            <div class="absolute top-0 right-0 p-4 opacity-10 text-[45px] md:text-[55px] lg:text-[60px] font-bold">0{{$index + 1}}</div>
+            <h3 class="font-['Space Grotesk' ,sans-serif] text-[28px] md:text-[32px] lg:text-[34px] mb-4">{{s.title}}</h3>
+            <p class="font-['Inter'] text-[14px] md:text-[16px] lg:text-[18px] text-[#bbc9cf] mb-6">
+                {{s.desc}}
+            </p>
+            <ul class="space-y-3 font-['JetBrains Mono'] text-[14px] md:text-[16px] lg:text-[18px] text-[#a4e6ff]">
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-[15px] md:text-[17px] lg:text-[19px]">check_circle</span> {{s.Checkbox1}} </li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-[15px] md:text-[17px] lg:text-[19px]">check_circle</span> {{s.Checkbox2}} </li>
+                <li class="flex items-center gap-2"><span
+                        class="material-symbols-outlined text-[15px] md:text-[17px] lg:text-[19px]">check_circle</span> {{s.Checkbox3}} </li>
+            </ul>
+        </div>
+      }  
+    </div>
+  </section>
+</body>
+</html>
