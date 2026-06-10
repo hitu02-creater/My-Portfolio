@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef , signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
     "Web Desinger"
   ]
 
-  displayText: string = '';
+  displayText= signal('');
   private phraseIdx: number = 0;
   private charIdx: number = 0;
   private isDeleting: boolean = false;
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
 
     if (!this.isDeleting) {
       this.charIdx++;
-      this.displayText = currentText.substring(0, this.charIdx);
+      this.displayText.set(currentText.substring(0, this.charIdx));
 
       if (this.charIdx === currentText.length) {
         this.isDeleting = true;
@@ -40,13 +40,15 @@ export class HomeComponent implements OnInit {
       }
     } else {
       this.charIdx--;
-      this.displayText = currentText.substring(0, this.charIdx);
+      this.displayText.set(currentText.substring(0, this.charIdx));
 
       if (this.charIdx === 0) {
         this.isDeleting = false;
         this.phraseIdx = (this.phraseIdx + 1) % this.phrases.length;
       }
     }
+
+    console.log(this.displayText, this.charIdx);
 
     setTimeout(() => this.handleTyping(), this.isDeleting ? 75 : 150);
 
