@@ -9,68 +9,48 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  text: string = 'Frontend Developer';
-  displaytext: string = '';
+  words = [
+    "Frontend Developer",
+    "Web Desinger"
+  ]
+
+  displaytext = "";
+  wordindex = 0;
+  charindex = 0;
+  isDeleting = false;
 
   ngOnInit(): void {
-    let i = 0;
-
-    const interval = setInterval(() => {
-
-      this.displaytext += this.text.charAt(i);
-      i++;
-
-      console.log(this.displaytext);
-
-      if (i >= this.text.length) {
-        clearInterval(interval);
-      }
-
-    }, 100);
+    this.typeEffect();
   }
 
-  // words = [
-  //   "Frontend Developer",
-  //   "Web Desinger"
-  // ]
+  typeEffect(): void {
+    const currentWord = this.words[this.wordindex];
 
-  // displaytext = "";
-  // wordindex = 0;
-  // charindex = 0;
-  // isDeleting = false;
+    if (this.isDeleting) {
+      this.displaytext = currentWord.substring(0, this.charindex - 1)
+      this.charindex--;
 
-  // ngOnInit(): void {
-  //   this.typeEffect();
-  // }
+      if (this.charindex === 0) {
+        this.isDeleting = false;
+        this.wordindex = (this.wordindex + 1) % this.words.length;
+        this.charindex = 0;
+      }
+    }
 
-  // typeEffect(): void {
-  //   const currentWord = this.words[this.wordindex];
+    else {
+      this.displaytext = currentWord.substring(0, this.charindex + 1);
+      this.charindex++;
 
-  //   if (this.isDeleting) {
-  //     this.displaytext = currentWord.substring(0, this.charindex - 1)
-  //     this.charindex--;
+      if (this.charindex === currentWord.length) {
+        this.isDeleting = true;
 
-  //     if (this.charindex === 0) {
-  //       this.isDeleting = false;
-  //       this.wordindex = (this.wordindex + 1) % this.words.length;
-  //       this.charindex = 0;
-  //     }
-  //   }
+        setTimeout(() => this.typeEffect(), 1500);
 
-  //   else {
-  //     this.displaytext = currentWord.substring(0, this.charindex + 1);
-  //     this.charindex++;
-
-  //     if (this.charindex === currentWord.length) {
-  //       this.isDeleting = true;
-
-  //       setTimeout(() => this.typeEffect(), 1500);
-
-  //       return;
-  //     }
-  //   }
-  //   setTimeout(() => {
-  //     this.typeEffect();
-  //   }, this.isDeleting ? 60 : 100);
-  // }
+        return;
+      }
+    }
+    setTimeout(() => {
+      this.typeEffect();
+    }, this.isDeleting ? 60 : 100);
+  }
 }
