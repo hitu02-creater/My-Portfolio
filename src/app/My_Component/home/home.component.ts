@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   isDeleting = false;
 
   ngOnInit(): void {
+    console.log('ngOnInit called');
   this.startTyping();
 }
 
