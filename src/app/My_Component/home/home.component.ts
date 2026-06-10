@@ -9,48 +9,68 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  words = [
-    "Frontend Developer",
-    "Web Desinger"
-  ]
-
-  displaytext = "";
-  wordindex = 0;
-  charindex = 0;
-  isDeleting = false;
+  text: string = 'Frontend Developer';
+  displaytext: string = '';
 
   ngOnInit(): void {
-    this.typeEffect();
+    let i = 0;
+
+    const interval = setInterval(() => {
+
+      this.displaytext += this.text.charAt(i);
+      i++;
+
+      console.log(this.displaytext);
+
+      if (i >= this.text.length) {
+        clearInterval(interval);
+      }
+
+    }, 100);
   }
 
-  typeEffect(): void {
-    const currentWord = this.words[this.wordindex];
+  // words = [
+  //   "Frontend Developer",
+  //   "Web Desinger"
+  // ]
 
-    if (this.isDeleting) {
-      this.displaytext = currentWord.substring(0, this.charindex - 1)
-      this.charindex--;
+  // displaytext = "";
+  // wordindex = 0;
+  // charindex = 0;
+  // isDeleting = false;
 
-      if (this.charindex === 0) {
-        this.isDeleting = false;
-        this.wordindex = (this.wordindex + 1) % this.words.length;
-        this.charindex = 0;
-      }
-    }
+  // ngOnInit(): void {
+  //   this.typeEffect();
+  // }
 
-    else {
-      this.displaytext = currentWord.substring(0, this.charindex + 1);
-      this.charindex++;
+  // typeEffect(): void {
+  //   const currentWord = this.words[this.wordindex];
 
-      if (this.charindex === currentWord.length) {
-        this.isDeleting = true;
+  //   if (this.isDeleting) {
+  //     this.displaytext = currentWord.substring(0, this.charindex - 1)
+  //     this.charindex--;
 
-        setTimeout(() => this.typeEffect(), 1500);
+  //     if (this.charindex === 0) {
+  //       this.isDeleting = false;
+  //       this.wordindex = (this.wordindex + 1) % this.words.length;
+  //       this.charindex = 0;
+  //     }
+  //   }
 
-        return;
-      }
-    }
-    setTimeout(() => {
-      this.typeEffect();
-    }, this.isDeleting ? 60 : 100);
-  }
+  //   else {
+  //     this.displaytext = currentWord.substring(0, this.charindex + 1);
+  //     this.charindex++;
+
+  //     if (this.charindex === currentWord.length) {
+  //       this.isDeleting = true;
+
+  //       setTimeout(() => this.typeEffect(), 1500);
+
+  //       return;
+  //     }
+  //   }
+  //   setTimeout(() => {
+  //     this.typeEffect();
+  //   }, this.isDeleting ? 60 : 100);
+  // }
 }
