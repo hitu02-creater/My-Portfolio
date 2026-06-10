@@ -10,22 +10,6 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class HomeComponent {
 
-  showModal = false;
-  resumeUrl: string = 'assets/resume.pdf'; // Path to your file
-  safeResumeUrl: SafeResourceUrl;
-
-  constructor(private sanitizer: DomSanitizer) {
-    this.safeResumeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.resumeUrl);
-  }
-
-  openResume() {
-    this.showModal = true;
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-  }
-
-  closeResume() {
-    this.showModal = false;
-    document.body.style.overflow = 'auto'; // Restore scrolling
-  }
+  
 
 };
