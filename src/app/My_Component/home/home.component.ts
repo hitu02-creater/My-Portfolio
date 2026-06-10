@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
 
   phrases = [
     "Frontend Developer",
-    "Web Desinger"
+    "Web Desinger",
+    "Creative Problem Solver",
   ]
 
   displayText= signal('');
