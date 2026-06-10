@@ -20,37 +20,51 @@ export class HomeComponent implements OnInit {
   isDeleting = false;
 
   ngOnInit(): void {
-    this.typeEffect();
+    this.startTyping();
   }
 
-  typeEffect(): void {
-    const currentWord = this.words[this.wordindex];
+  startTyping() {
+    const word = this.words[this.wordindex];
 
-    if (this.isDeleting) {
-      this.displaytext = currentWord.substring(0, this.charindex - 1)
-      this.charindex--;
+    const timer = setInterval(() => {
 
-      if (this.charindex === 0) {
-        this.isDeleting = false;
-        this.wordindex = (this.wordindex + 1) % this.words.length;
-        this.charindex = 0;
+      if (this.charindex < word.length) {
+        this.displaytext += word[this.charindex];
+        this.charindex++;
+      } else {
+        clearInterval(timer);
       }
-    }
 
-    else {
-      this.displaytext = currentWord.substring(0, this.charindex + 1);
-      this.charindex++;
-
-      if (this.charindex === currentWord.length) {
-        this.isDeleting = true;
-
-        setTimeout(() => this.typeEffect(), 1500);
-
-        return;
-      }
-    }
-    setTimeout(() => {
-      this.typeEffect();
-    }, this.isDeleting ? 60 : 100);
+    }, 100);
   }
-}
+    // typeEffect(): void {
+    //   const currentWord = this.words[this.wordindex];
+
+    //   if (this.isDeleting) {
+    //     this.displaytext = currentWord.substring(0, this.charindex - 1)
+    //     this.charindex--;
+
+    //     if (this.charindex === 0) {
+    //       this.isDeleting = false;
+    //       this.wordindex = (this.wordindex + 1) % this.words.length;
+    //       this.charindex = 0;
+    //     }
+    //   }
+
+    //   else {
+    //     this.displaytext = currentWord.substring(0, this.charindex + 1);
+    //     this.charindex++;
+
+    //     if (this.charindex === currentWord.length) {
+    //       this.isDeleting = true;
+
+    //       setTimeout(() => this.typeEffect(), 1500);
+
+    //       return;
+    //     }
+    //   }
+    //   setTimeout(() => {
+    //     this.typeEffect();
+    //   }, this.isDeleting ? 60 : 100);
+    // }
+  }
