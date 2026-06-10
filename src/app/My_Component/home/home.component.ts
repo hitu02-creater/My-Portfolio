@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef , signal } from '@angular/core';
+import { Component, OnInit , signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  // constructor(private cdr: ChangeDetectorRef) { }
 
   phrases = [
     "Frontend Developer",
@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
   private phraseIdx: number = 0;
   private charIdx: number = 0;
   private isDeleting: boolean = false;
-  private typingSpeed: number = 150;
 
   ngOnInit(): void {
     this.handleTyping();
@@ -47,8 +46,6 @@ export class HomeComponent implements OnInit {
         this.phraseIdx = (this.phraseIdx + 1) % this.phrases.length;
       }
     }
-
-    console.log(this.displayText, this.charIdx);
 
     setTimeout(() => this.handleTyping(), this.isDeleting ? 75 : 150);
 
