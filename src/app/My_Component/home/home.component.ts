@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component , OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +7,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
  words : String[] = [
   "Frontend Developer",
@@ -20,6 +19,10 @@ export class HomeComponent {
  charindex =0;
  isDeleting = false;
 
+ ngOnInit(): void {
+    this.typeEffect();
+  }
+
  typeEffect() {
   const currentWord = this.words[this.wordindex];
 
@@ -28,8 +31,8 @@ export class HomeComponent {
     this.charindex++;
 
     if(this.charindex === currentWord.length){
-      this.isDeleting = false;
-      setTimeout(()=>{this.typeEffect(),1500});
+      this.isDeleting = true;
+      setTimeout(()=>this.typeEffect(),1500);
       return;
     }
   }
