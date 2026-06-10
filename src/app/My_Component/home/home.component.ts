@@ -9,48 +9,44 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  words = [
+  phrases = [
     "Frontend Developer",
     "Web Desinger"
   ]
 
-  displaytext = "";
-  wordindex = 0;
-  charindex = 0;
-  isDeleting = false;
+  displayText: string = '';
+  private phraseIdx: number = 0;
+  private charIdx: number = 0;
+  private isDeleting: boolean = false;
+  private typingSpeed: number = 150;
 
   ngOnInit(): void {
-    this.typeEffect();
+    this.handleTyping();
   }
 
-  typeEffect(): void {
-    const currentWord = this.words[this.wordindex];
+  private handleTyping(): void {
+    const currentFullText = this.phrases[this.phraseIdx];
 
     if (this.isDeleting) {
-      this.displaytext = currentWord.substring(0, this.charindex - 1)
-      this.charindex--;
-
-      if (this.charindex < 0) {
-        this.isDeleting = false;
-        this.wordindex = (this.wordindex + 1) % this.words.length;
-        this.charindex = 0;
-      }
+      this.displayText = currentFullText.substring(0, this.charIdx - 1);
+      this.charIdx--;
+      this.typingSpeed = 75; // Faster deletion
+    } else {
+      this.displayText = currentFullText.substring(0, this.charIdx + 1);
+      this.charIdx++;
+      this.typingSpeed = 150; // Normal typing
     }
 
-    else {
-      this.displaytext = currentWord.substring(0, this.charindex + 1);
-      this.charindex++;
-
-      if (this.charindex > currentWord.length) {
-        this.isDeleting = true;
-
-        setTimeout(() => this.typeEffect(), 1500);
-
-        return;
-      }
+    // Switching Logic
+    if (!this.isDeleting && this.charIdx === currentFullText.length) {
+      this.isDeleting = true;
+      this.typingSpeed = 2000; // Pause at end of phrase
+    } else if (this.isDeleting && this.charIdx === 0) {
+      this.isDeleting = false;
+      this.phraseIdx = (this.phraseIdx + 1) % this.phrases.length;
+      this.typingSpeed = 500; // Pause before starting next phrase
     }
-    setTimeout(() => {
-      this.typeEffect();
-    }, this.isDeleting ? 60 : 100);
+
+    setTimeout(() => this.handleTyping(), this.typingSpeed);
   }
 }
