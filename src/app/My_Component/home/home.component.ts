@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  words: String[] = [
+  words: string[] = [
     "Frontend Developer",
     "Web Desinger"
   ]
