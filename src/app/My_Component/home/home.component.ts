@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ChangeDetectorRef  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,6 +8,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   phrases = [
     "Frontend Developer",
@@ -33,6 +35,7 @@ export class HomeComponent implements OnInit {
       this.typingSpeed = 75; // Faster deletion
     } else {
       this.displayText = currentFullText.substring(0, this.charIdx + 1);
+    console.log(this.displayText);
       this.charIdx++;
       this.typingSpeed = 150; // Normal typing
     }
