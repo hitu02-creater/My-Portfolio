@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  words: string[] = [
+  words = [
     "Frontend Developer",
     "Web Desinger"
   ]
@@ -33,6 +33,7 @@ export class HomeComponent implements OnInit {
       if (this.charindex === 0) {
         this.isDeleting = false;
         this.wordindex = (this.wordindex + 1) % this.words.length;
+        this.charindex = 0;
       }
     }
 
@@ -43,9 +44,7 @@ export class HomeComponent implements OnInit {
       if (this.charindex === currentWord.length) {
         this.isDeleting = true;
 
-        setTimeout(() => {
-          this.typeEffect();
-        }, 1500);
+        setTimeout(() => this.typeEffect(), 1500);
 
         return;
       }
