@@ -31,7 +31,7 @@
           Resume
         </button>
         <!-- Popup Overlay -->
-        <div *ngIf="showModal" class="fixed inset-0 z-[100] flex items-center justify-center p-4">
+        <div *ngIf="showModal" class="fixed inset-0 z-100 flex items-center justify-center p-4">
 
           <!-- Dimmed Backdrop (Click to close) -->
           <div class="absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity" (click)="toggleModal()"></div>
@@ -72,7 +72,7 @@
             </div>
 
             <!-- PDF Viewer Area -->
-            <div class="flex-grow bg-slate-950 p-2 md:p-6">
+            <div class="grow bg-slate-950 p-2 md:p-6">
               <iframe [src]="safeResumeUrl" class="w-full h-full rounded shadow-inner" frameborder="0">
               </iframe>
             </div>
