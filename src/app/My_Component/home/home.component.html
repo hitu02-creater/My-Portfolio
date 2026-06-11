@@ -32,10 +32,10 @@
         </button>
         <!-- Popup Container -->
         <div [@if]="isPopupOpen"
-          class="fixed inset-0 z-9999 flex items-start justify-center pt-10 px-4 overflow-hidden">
+          class="fixed inset-0 z-9999 flex items-start justify-center pt-10 px-4 overflow-hidden mt-10">
 
           <!-- Semi-transparent Backdrop (Keeps main web visible) -->
-          <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]" (click)="closeResume()"></div>
+          <div class="absolute inset-0 bg-slate-900/40" (click)="closeResume()"></div>
 
           <!-- Content Box (The actual popup) -->
           <div

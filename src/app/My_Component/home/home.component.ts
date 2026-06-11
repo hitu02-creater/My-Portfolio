@@ -78,7 +78,7 @@ export class HomeComponent implements OnInit {
   downloadFile() {
     const link = document.createElement('a');
     link.href = this.resumeUrl;
-    link.download = 'Developer_Resume.pdf';
+    link.download = 'Hitesh_Vekariya_Resume.pdf';
     link.click();
   }
 
