@@ -54,24 +54,32 @@ export class HomeComponent implements OnInit {
 
   // Resume Display Code
 
-  showModal: boolean = false;
-  // Replace with your actual PDF path in assets folder
-  resumePath: string = 'assets/hitesh-resume.pdf';
-  safeResumeUrl: SafeResourceUrl;
+  isPopupOpen: boolean = false;
+  // Path to your resume in the assets folder
+  resumeUrl: string = 'assets/my-resume.pdf'; 
+  safeUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
-    this.safeResumeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.resumePath);
+    // Sanitize the URL to allow iframe loading
+    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.resumeUrl);
   }
 
-  toggleModal() {
-    this.showModal = !this.showModal;
-    document.body.style.overflow = this.showModal ? 'hidden' : 'auto';
+  openResume() {
+    this.isPopupOpen = true;
+    // Optional: disable background scroll
+    document.body.style.overflow = 'hidden';
   }
 
-  downloadResume() {
+  closeResume() {
+    this.isPopupOpen = false;
+    document.body.style.overflow = 'auto';
+  }
+
+  downloadFile() {
     const link = document.createElement('a');
-    link.href = this.resumePath;
-    link.download = 'Hitesh_Vekariya_Resume.pdf';
+    link.href = this.resumeUrl;
+    link.download = 'Developer_Resume.pdf';
     link.click();
   }
+
 }
