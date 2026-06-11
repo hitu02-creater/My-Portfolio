@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
   // Resume Display Code
 
   isPopupOpen: boolean = false;
-  resumeUrl: string = 'Hitesh_Vekariya_Resume'; 
+  resumeUrl: string = 'Hitesh_Vekariya_Resume_page.jpg'; 
   safeUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
