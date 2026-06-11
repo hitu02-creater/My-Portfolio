@@ -55,7 +55,6 @@ export class HomeComponent implements OnInit {
   // Resume Display Code
 
   isPopupOpen: boolean = false;
-  // Path to your resume in the assets folder
   resumeUrl: string = 'Hitesh_Vekariya_Resume'; 
   safeUrl: SafeResourceUrl;
 
@@ -66,7 +65,6 @@ export class HomeComponent implements OnInit {
 
   openResume() {
     this.isPopupOpen = true;
-    // Optional: disable background scroll
     document.body.style.overflow = 'hidden';
   }
 
