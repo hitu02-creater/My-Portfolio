@@ -32,34 +32,34 @@
         </button>
         <!-- Popup Container -->
         <div [@if]="isPopupOpen"
-          class="fixed inset-0 z-9999 flex items-start justify-center pt-10 px-4 overflow-hidden mt-10">
+          class="fixed inset-0 z-9999 flex items-start justify-center pt-10 px-4 overflow-hidden mt-40">
 
           <!-- Semi-transparent Backdrop (Keeps main web visible) -->
           <div class="absolute inset-0 bg-slate-900/40" (click)="closeResume()"></div>
 
           <!-- Content Box (The actual popup) -->
           <div
-            class="relative w-full max-w-4xl bg-surface-container border border-outline-variant rounded-2xl shadow-2xl flex flex-col max-h-[85vh] animate-in slide-in-from-top duration-500">
+            class="relative w-full max-w-3xl bg-[#171f33] border border-[#3c494e] rounded-2xl shadow-2xl flex flex-col max-h-[50vh] animate-in slide-in-from-top duration-500">
 
             <!-- Header with Actions -->
             <div
-              class="flex items-center justify-between p-4 border-b border-outline-variant bg-surface-container-high rounded-t-2xl">
+              class="flex items-center justify-between p-4 border-b border-[#3c494e] bg-[#222a3d] rounded-t-2xl">
               <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary">description</span>
-                <h3 class="font-bold text-on-surface">resume_document.pdf</h3>
+                <span class="material-symbols-outlined text-[#a4e6ff]">description</span>
+                <h3 class="font-bold text-[#dae2fd]">resume_document.pdf</h3>
               </div>
 
               <div class="flex items-center gap-2">
                 <!-- Download Button -->
                 <button (click)="downloadFile()"
-                  class="flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary border border-primary/20 rounded-lg hover:bg-primary hover:text-on-primary transition-all text-sm font-medium">
+                  class="flex items-center gap-2 px-4 py-1.5 bg-[#a4e6ff]/10 text-[#a4e6ff] border border-[#a4e6ff]/20 rounded-lg hover:bg-#a4e6ff hover:text-[#003543] transition-all text-sm font-medium">
                   <span class="material-symbols-outlined text-sm">download</span>
                   Download
                 </button>
 
                 <!-- Close Button -->
                 <button (click)="closeResume()"
-                  class="p-1.5 hover:bg-error/10 hover:text-error text-on-surface-variant rounded-lg transition-colors">
+                  class="p-1.5 hover:bg-[#ffb4ab]/10 hover:text-error text-[#bbc9cf] rounded-lg transition-colors">
                   <span class="material-symbols-outlined">close</span>
                 </button>
               </div>
@@ -67,13 +67,13 @@
 
             <!-- Document Preview Area -->
             <div class="grow bg-slate-800 p-2">
-              <iframe [src]="safeUrl" class="w-full h-full rounded-lg min-h-[60vh]" frameborder="0">
+              <iframe [src]="safeUrl" class="w-full h-full rounded-lg min-h-[45vh]" frameborder="0">
               </iframe>
             </div>
 
             <!-- Bottom Info (Optional) -->
-            <div class="p-3 text-center bg-surface-container-low rounded-b-2xl">
-              <p class="text-[10px] text-on-surface-variant uppercase tracking-widest font-medium">Preview Mode • Hitesh
+            <div class="p-3 text-center bg-[#131b2e] rounded-b-2xl">
+              <p class="text-[10px] text-[#bbc9cf] uppercase tracking-widest font-medium">Preview Mode • Hitesh
                 Vekariya Portfolio</p>
             </div>
           </div>
