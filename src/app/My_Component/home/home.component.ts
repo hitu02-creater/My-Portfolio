@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
 
   isPopupOpen: boolean = false;
   // Path to your resume in the assets folder
-  resumeUrl: string = 'assets/my-resume.pdf'; 
+  resumeUrl: string = 'Hitesh_Vekariya_Resume.pdf'; 
   safeUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
