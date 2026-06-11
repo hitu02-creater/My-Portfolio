@@ -54,28 +54,27 @@ export class HomeComponent implements OnInit {
 
   // Resume Display Code
 
-  isResumeModalOpen: boolean = false;
-  resumeFileUrl: string = 'Hitesh_Vekariya_Resume_page.jpg'; // Path to your PDF file
-  safeResumeUrl: SafeResourceUrl;
+  isPopupOpen: boolean = false;
+  documentUrl: string = 'Hitesh_Vekariya_Resume_page.jpg'; // Path to your PDF file
+  safeUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
-    // Trust the local file URL for the iframe
-    this.safeResumeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.resumeFileUrl);
+    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.documentUrl);
   }
 
-  openResume() {
-    this.isResumeModalOpen = true;
-    document.body.style.overflow = 'hidden'; // Stop background scrolling
+  openPopup() {
+    this.isPopupOpen = true;
+    document.body.style.overflow = 'hidden'; 
   }
 
-  closeResume() {
-    this.isResumeModalOpen = false;
-    document.body.style.overflow = 'auto'; // Restore background scrolling
+  closePopup() {
+    this.isPopupOpen = false;
+    document.body.style.overflow = 'auto';
   }
 
-  downloadResume() {
+  downloadPDF() {
     const link = document.createElement('a');
-    link.href = this.resumeFileUrl;
+    link.href = this.documentUrl;
     link.download = 'Hitesh_Vekariya_Resume.pdf';
     document.body.appendChild(link);
     link.click();
