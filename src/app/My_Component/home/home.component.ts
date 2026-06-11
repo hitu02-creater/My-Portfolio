@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
   // Resume Display Code
 
   isResumeModalOpen: boolean = false;
-  resumeFileUrl: string = 'assets/resume.pdf'; // Path to your PDF file
+  resumeFileUrl: string = 'Hitesh_Vekariya_Resume_page.jpg'; // Path to your PDF file
   safeResumeUrl: SafeResourceUrl;
 
   constructor(private sanitizer: DomSanitizer) {
