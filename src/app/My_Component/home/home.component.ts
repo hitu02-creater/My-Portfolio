@@ -1,5 +1,6 @@
 import { Component, OnInit , signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -53,23 +54,23 @@ export class HomeComponent implements OnInit {
 
   // Resume Display Code
 
-  isOpen: boolean = false;
-  
-  resumeUrl: string = 'Hitesh_Vekariya_Resume.pdf'; 
+  showModal: boolean = false;
+  // Replace with your actual PDF path in assets folder
+  resumePath: string = 'assets/hitesh-resume.pdf';
+  safeResumeUrl: SafeResourceUrl;
 
-  openModal(): void {
-    this.isOpen = true;
-    document.body.style.overflow = 'hidden';
+  constructor(private sanitizer: DomSanitizer) {
+    this.safeResumeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.resumePath);
   }
 
-  closeModal(): void {
-    this.isOpen = false;
-    document.body.style.overflow = 'auto';
+  toggleModal() {
+    this.showModal = !this.showModal;
+    document.body.style.overflow = this.showModal ? 'hidden' : 'auto';
   }
 
-  downloadResume(): void {
+  downloadResume() {
     const link = document.createElement('a');
-    link.href = this.resumeUrl;
+    link.href = this.resumePath;
     link.download = 'Hitesh_Vekariya_Resume.pdf';
     link.click();
   }
