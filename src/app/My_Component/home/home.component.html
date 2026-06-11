@@ -10,7 +10,8 @@
       </div>
       <h1 class="font-['Space Grotesk',sans-serif] text-[28px] mb-6 leading-tight
         md:text-[32px] lg:text-[36px] 2xl:text-[40px]">Hi, I'm Hitesh Vekariya <br><span
-          class="text-[#a4e6ff] text-glow">{{ displayText() }}<span class="text-[#a4e6ff] text-glow animate-pulse">|</span> </span><br> Building Modern Web Experiences</h1>
+          class="text-[#a4e6ff] text-glow">{{ displayText() }}<span
+            class="text-[#a4e6ff] text-glow animate-pulse">|</span> </span><br> Building Modern Web Experiences</h1>
       <p
         class="font-['Inter',sans-serif] text-[14px] text-[#bbc9cf] text-justify mb-10 max-w-lg md:text-[16px] lg:text-[18px] 2xl:text-[20px]">
         I am a passionate Frontend Developer specializing in <span class="text-[#dae2fd] font-semibold">Angular</span>,
@@ -25,10 +26,68 @@
       <div class="flex flex-wrap gap-6">
         <a class="border border-[#a4e6ff] text-[#a4e6ff] font-['JetBrains Mono'] text-[12px] px-8 py-4 rounded-xl hover:bg-[#a4e6ff]/5 transition-all
           md:text-[16px] lg:text-[18px]" href="#contact">Contact Me</a>
-        <button class="bg-[#00d1ff] text-[#00566a] font-['JetBrains Mono'] text-[12px] px-8 py-4 rounded-xl hover:shadow-[0_0_20px_rgba(0,209,255,0.4)] transition-all cursor-pointer
+        <button (click)="openModal()" class="bg-[#00d1ff] text-[#00566a] font-['JetBrains Mono'] text-[12px] px-8 py-4 rounded-xl hover:shadow-[0_0_20px_rgba(0,209,255,0.4)] transition-all cursor-pointer
             md:text-[16px] lg:text-[18px]">
           Resume
         </button>
+        <div [@if]="isOpen"
+          class="fixed inset-0 text-zinc-100 flex items-center justify-center p-4 md:p-10 animate-in fade-in duration-300">
+
+          <!-- Backdrop -->
+          <div class="absolute inset-0 bg-[#060e20]/80 backdrop-blur-sm" (click)="closeModal()"></div>
+
+          <!-- Modal Content -->
+          <div
+            class="relative w-full max-w-4xl bg-[#131b2e] border border-slate-700 rounded-3xl shadow-2xl overflow-hidden flex flex-col h-full max-h-[90vh]">
+
+            <!-- Header -->
+            <div class="p-6 border-b border-slate-800 flex justify-between items-center bg-[#171f33]">
+              <div>
+                <h3 class="text-xl font-bold text-white">Curriculum Vitae</h3>
+                <p class="text-xs text-slate-400">Hitesh_Vekariya_Resume.pdf</p>
+              </div>
+              <div class="flex gap-3">
+                <!-- Download Button -->
+                <button (click)="downloadResume()"
+                  class="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-cyan-400 px-4 py-2 rounded-xl border border-slate-700 transition">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                  </svg>
+                  <span class="hidden sm:inline font-medium">Download</span>
+                </button>
+
+                <!-- Close Button -->
+                <button (click)="closeModal()"
+                  class="p-2 text-slate-400 hover:text-white hover:bg-red-500/10 rounded-xl transition">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 18L18 6M6 6l12 12"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Body: Document Viewer -->
+            <div class="grow bg-slate-900 p-4 overflow-auto">
+              <!-- Iframe to preview PDF -->
+              <iframe [src]="resumeUrl" class="w-full h-full rounded-lg border border-slate-800 bg-white"
+                frameborder="0">
+              </iframe>
+
+              <!-- Fallback for mobile if iframe fails -->
+              <div class="hidden md:hidden text-center p-10">
+                <p class="text-slate-400 mb-4">Preview not available on this device.</p>
+                <button (click)="downloadResume()" class="text-cyan-400 underline">Download to view</button>
+              </div>
+            </div>
+
+            <!-- Footer Mobile Only -->
+            <div class="p-4 border-t border-slate-800 bg-[#171f33] md:hidden">
+              <button (click)="downloadResume()" class="w-full bg-cyan-500 text-[#0b1326] py-3 rounded-xl font-bold">
+                Download PDF
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="relative order-2 md:order-2">

@@ -1,4 +1,4 @@
-import { Component, OnInit , signal } from '@angular/core';
+import { Component, OnInit , signal} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,9 +8,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-
-  // constructor(private cdr: ChangeDetectorRef) { }
-
+  
+  // Typewriter Code  
   phrases = [
     "Frontend Developer",
     "Web Desinger",
@@ -50,5 +49,28 @@ export class HomeComponent implements OnInit {
 
     setTimeout(() => this.handleTyping(), this.isDeleting ? 75 : 150);
 
+  }
+
+  // Resume Display Code
+
+  isOpen: boolean = false;
+  
+  resumeUrl: string = 'Hitesh_Vekariya_Resume.pdf'; 
+
+  openModal(): void {
+    this.isOpen = true;
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal(): void {
+    this.isOpen = false;
+    document.body.style.overflow = 'auto';
+  }
+
+  downloadResume(): void {
+    const link = document.createElement('a');
+    link.href = this.resumeUrl;
+    link.download = 'Hitesh_Vekariya_Resume.pdf';
+    link.click();
   }
 }
