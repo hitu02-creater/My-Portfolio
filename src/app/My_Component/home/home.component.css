@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@keyframes resume-open{
+    0%{
+        opacity: 0;
+        transform: translate(-50%, -40px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+  }
+}
+
+.animate-resume-open {
+  animation: resumeOpen 0.5s ease-out forwards;
+}
