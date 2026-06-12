@@ -1,17 +1,53 @@
 @import "tailwindcss";
 
-@keyframes resume-open{
-    0%{
-        opacity: 0;
-        transform: translate(-50%, -40px) scale(0.95);
-    }
+.typing {
+  border-right: 3px solid #38bdf8;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+    typing 3s steps(25) infinite alternate,
+    blink .7s infinite;
+}
 
-    100% {
-        opacity: 1;
-        transform: translate(-50%, 0) scale(1);
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.hero-image {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes resume-open{
+    0% {
+    opacity: 0;
+    transform: translate(-50%, -60px) scale(.9);
+  }
+
+  70% {
+    transform: translate(-50%, 10px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
   }
 }
 
 .animate-resume-open {
-  animation: resumeOpen 3s ease-out forwards;
+  animation: resumeOpen .6s cubic-bezier(.34,1.56,.64,1);
 }
