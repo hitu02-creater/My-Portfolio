@@ -8,15 +8,14 @@
   </div>
   <div class="max-w-7xl mx-auto grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
     @for (s of services; track s.title) {
-    <div class="glass-card p-10 rounded-4xl hover:-translate-y-2 transition-transform duration-500 group">
+    <div class="glass-card p-8 md:p-12 rounded-4xl hover:-translate-y-2 transition-transform duration-500 group">
       <div
         class="w-16 h-16 rounded-2xl bg-[#a4e6ff]/10 flex items-center justify-center mb-8 group-hover:bg-[#a4e6ff] transition-colors">
         <span
           class="material-symbols-outlined text-[#a4e6ff] text-[30px] md:text-[36px] lg:text-[48px] group-hover:text-[#003543]">{{s.logo}}</span>
       </div>
-      <div class="absolute top-0 right-0 p-4 opacity-10 text-[45px] md:text-[55px] lg:text-[60px] font-bold">0{{$index +
-        1}}</div>
-      <h3 class="font-['Space Grotesk' ,sans-serif] text-[28px] md:text-[32px] lg:text-[34px] mb-4">{{s.title}}</h3>
+      <div class="absolute top-4 right-4 md:top-0 md:right-0 p-4 opacity-10 text-[45px] md:text-[55px] lg:text-[60px] font-bold">0{{$index + 1}}</div>
+      <h3 class="font-['Space Grotesk' ,sans-serif] text-[24px] md:text-[32px] lg:text-[34px] mb-4">{{s.title}}</h3>
       <p class="font-['Inter'] text-[14px] md:text-[16px] lg:text-[18px] text-[#bbc9cf] mb-6">
         {{s.desc}}
       </p>
