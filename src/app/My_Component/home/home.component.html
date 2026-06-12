@@ -50,7 +50,7 @@
     </div>
   </div>
 
-  <div [@if] = "isDialogOpen">
+  @if (isDialogOpen) { 
     <div id="dialog" aria-labelledby="dialog-title"
       class="fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
       <div
@@ -88,5 +88,5 @@
         </div>
       </div>
     </div>
-  </div>
+  }
 </section>
