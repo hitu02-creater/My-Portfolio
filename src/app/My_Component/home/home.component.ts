@@ -53,5 +53,13 @@ export class HomeComponent implements OnInit {
   }
 
   // Resume Display Code
+  isDialogOpen = false;
 
+  openDialog(){
+    this.isDialogOpen = true;
+  }
+
+  closeDialog(){
+    this.isDialogOpen = false;
+  }
 }
