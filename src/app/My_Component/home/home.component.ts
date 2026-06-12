@@ -1,15 +1,15 @@
-import { Component, OnInit , signal} from '@angular/core';
+import { Component, OnInit, signal , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
   imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+  schemas : [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeComponent implements OnInit {
-  
+
   // Typewriter Code  
   phrases = [
     "Frontend Developer",
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     "Creative Problem Solver",
   ]
 
-  displayText= signal('');
+  displayText = signal('');
   private phraseIdx: number = 0;
   private charIdx: number = 0;
   private isDeleting: boolean = false;
@@ -54,30 +54,4 @@ export class HomeComponent implements OnInit {
 
   // Resume Display Code
 
-  isPopupOpen: boolean = false;
-  documentUrl: string = 'Hitesh_Vekariya_Resume_page.jpg'; // Path to your PDF file
-  safeUrl: SafeResourceUrl;
-
-  constructor(private sanitizer: DomSanitizer) {
-    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.documentUrl);
-  }
-
-  openPopup() {
-    this.isPopupOpen = true;
-    document.body.style.overflow = 'hidden'; 
-  }
-
-  closePopup() {
-    this.isPopupOpen = false;
-    document.body.style.overflow = 'auto';
-  }
-
-  downloadPDF() {
-    const link = document.createElement('a');
-    link.href = this.documentUrl;
-    link.download = 'Hitesh_Vekariya_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
 }
