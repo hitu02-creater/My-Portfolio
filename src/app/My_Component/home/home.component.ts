@@ -60,6 +60,7 @@ export class HomeComponent implements OnInit {
   }
 
   closeDialog(){
+    console.log("btn is clicked");
     this.isDialogOpen = false;
   }
 }
