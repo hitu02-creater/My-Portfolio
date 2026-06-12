@@ -13,5 +13,5 @@
 }
 
 .animate-resume-open {
-  animation: resumeOpen 1s ease-out forwards;
+  animation: resumeOpen 3s ease-out forwards;
 }
