@@ -10,9 +10,9 @@ import { FooterComponent } from './My_Component/footer/footer.component'
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent , HomeComponent, AboutComponent ,
-    EducationComponent , SkillsComponent ,
-    ServicesComponent , ContactComponent,
+  imports: [NavbarComponent, HomeComponent, AboutComponent,
+    EducationComponent, SkillsComponent,
+    ServicesComponent, ContactComponent,
     FooterComponent
   ],
   templateUrl: './app.component.html',
