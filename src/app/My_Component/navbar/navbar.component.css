@@ -25,7 +25,7 @@
 }
 
 /* Color change on hover */
-.nav-link:hover
+.nav-link:hover,
 .nav-link.active {
   color: rgb(42, 220, 220);
 }
@@ -41,7 +41,7 @@
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::after
+.nav-link:hover::after ,
 .nav-link.active::after {
   width: 100%;
 }
