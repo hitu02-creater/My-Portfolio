@@ -28,23 +28,29 @@ export class NavbarComponent {
 
   // Listen for scroll to change navbar background
 
+  setActiveSection(section: string) {
+    this.activeSection = section;
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
 
     const sections = document.querySelectorAll('section');
+    const scrollPosition = window.scrollY + 200;
 
-    sections.forEach((section) => {
+    for (const section of Array.from(sections)) {
 
-      const sectionTop = section.offsetTop - 150;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
+      const top = (section as HTMLElement).offsetTop;
+      const height = (section as HTMLElement).offsetHeight;
+      const id = section.getAttribute('id');
 
       if (
-        window.scrollY >= sectionTop &&
-        window.scrollY < sectionTop + sectionHeight
+        scrollPosition >= top &&
+        scrollPosition < top + height
       ) {
-        this.activeSection = sectionId || '';
+        this.activeSection = id || '';
+        break;
       }
-    });
+    }
   }
 }
