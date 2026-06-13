@@ -1,14 +1,33 @@
-import { Component , NgModule  , HostListener} from '@angular/core';
+import { Component, NgModule, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [CommonModule ],
+  imports: [CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
 
+  activeSection = 'home';
+
+  @HostListener('window:scroll', [])
+  onScroll() {
+    const sections = document.querySelectorAll('section');
+
+    sections.forEach((section) => {
+      const top = window.scrollY;
+      const offset = section.offsetTop - 120;
+      const height = section.offsetHeight;
+      const id = section.getAttribute('id');
+
+      if (top >= offset && top < offset + height) {
+        this.activeSection = id || '';
+      }
+    });
+  }
+
+  // homeburgger section
   isMenuOpen = false;
   isScrolled = false;
 
