@@ -7,25 +7,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
+
 export class NavbarComponent {
 
   activeSection = 'home';
-
-  @HostListener('window:scroll', [])
-  onScroll() {
-    const sections = document.querySelectorAll('section');
-
-    sections.forEach((section) => {
-      const top = window.scrollY;
-      const offset = section.offsetTop - 120;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-
-      if (top >= offset && top < offset + height) {
-        this.activeSection = id || '';
-      }
-    });
-  }
 
   // homeburgger section
   isMenuOpen = false;
@@ -42,9 +27,24 @@ export class NavbarComponent {
   }
 
   // Listen for scroll to change navbar background
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
-  }
 
+    const sections = document.querySelectorAll('section');
+
+    sections.forEach((section) => {
+
+      const sectionTop = section.offsetTop - 150;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute('id');
+
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight
+      ) {
+        this.activeSection = sectionId || '';
+      }
+    })
+  }
 }
