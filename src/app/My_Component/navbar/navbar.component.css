@@ -25,9 +25,14 @@
 }
 
 /* Color change on hover */
-.nav-link:hover,
-.nav-link.active {
-  color: rgb(42, 220, 220);
+.nav-link:hover {
+  color: #22d3ee;
+}
+
+.nav-link.active{
+  color: #818cf8;
+  text-shadow:
+    0 0 8px rgba(129,140,248,.4);
 }
 
 .nav-link::after {
@@ -41,7 +46,19 @@
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::after ,
+.nav-link:hover::after {
+  width: 100%;
+  background: #22d3ee;
+}
+
 .nav-link.active::after {
   width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #818cf8,
+    #a855f7
+  );
+  box-shadow:
+    0 0 10px rgba(168,85,247,.5);
 }
