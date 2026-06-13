@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  
+
   isMenuOpen = false;
   isScrolled = false;
 

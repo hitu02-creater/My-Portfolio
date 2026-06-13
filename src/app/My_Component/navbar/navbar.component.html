@@ -5,9 +5,9 @@
       <img src="Logo (2).png" alt="H.V Developer" class="w-full h-auto items-center bg-transparent" />
     </div>
     <ul class="hidden md:flex gap-8 text-[12px] md:text-[14px] lg:text-[16px] 2xl:text-[16px] font-medium">
-      <li><a href="#home" class="nav-link active:text-cyan-400 active:border-b-2 active:border-cyan-400">HOME</a></li>
+      <li><a href="#home" class="nav-link active:text-cyan-400">HOME</a></li>
       <li><a href="#about" class="nav-link">ABOUT</a></li>
-      <li><a href="#education" class="nav-link active:text-cyan-400 active:border-b-2 active:border-cyan-400">EDUCATION</a></li>
+      <li><a href="#education" class="nav-link">EDUCATION</a></li>
       <li><a href="#skills" class="nav-link">SKILLS</a></li>
       <li><a href="#services" class="nav-link">SERVICES</a></li>
       <li><a href="#contact" class="nav-link">CONTACT</a></li>
@@ -22,13 +22,13 @@
   <div [ngClass]="isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'"
     class="absolute top-0 left-0 w-full bg-[#0d172d] -z-10 transition-all duration-500 ease-in-out md:hidden shadow-2xl">
     <ul class="flex flex-col items-center gap-6 py-24 text-[18px] font-semibold tracking-widest">
-      <li><a href="#home" (click)="closeMenu()" class="text-white nav-link">HOME</a></li>
-      <li><a href="#about" (click)="closeMenu()" class="text-white nav-link">ABOUT</a></li>
-      <li><a href="#education" (click)="closeMenu()" class="text-white nav-link">EDUCATION</a>
+      <li><a href="#home" (click)="closeMenu()" class="nav-link">HOME</a></li>
+      <li><a href="#about" (click)="closeMenu()" class="nav-link">ABOUT</a></li>
+      <li><a href="#education" (click)="closeMenu()" class="nav-link">EDUCATION</a>
       </li>
-      <li><a href="#skills" (click)="closeMenu()" class="text-white nav-link">SKILLS</a></li>
-      <li><a href="#services" (click)="closeMenu()" class="text-white nav-link">SERVICES</a></li>
-      <li><a href="#contact" (click)="closeMenu()" class="text-white nav-link">CONTACT</a></li>
+      <li><a href="#skills" (click)="closeMenu()" class="nav-link">SKILLS</a></li>
+      <li><a href="#services" (click)="closeMenu()" class="nav-link">SERVICES</a></li>
+      <li><a href="#contact" (click)="closeMenu()" class="nav-link">CONTACT</a></li>
     </ul>
   </div>
 </header>

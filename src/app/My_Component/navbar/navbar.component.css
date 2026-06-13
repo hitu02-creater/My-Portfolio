@@ -19,13 +19,14 @@
 .nav-link {
   position: relative;
   text-decoration: none;
-  color: #6b7280;
+  color: #788090;
   padding: 8px 0;
   transition: color 0.3s ease;
 }
 
 /* Color change on hover */
-.nav-link:hover {
+.nav-link:hover
+.nav-link.active {
   color: rgb(42, 220, 220);
 }
 
@@ -40,6 +41,7 @@
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after
+.nav-link.active::after {
   width: 100%;
 }
