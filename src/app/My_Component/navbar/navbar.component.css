@@ -15,3 +15,33 @@
 .navbar {
   animation: slideDown .8s ease;
 }
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #6b7280; /* Gray-500 */
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+/* Color change on hover */
+.nav-link:hover {
+  color: #2563eb; /* Blue-600 */
+}
+
+/* The bottom border (initial state) */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #2563eb;
+  transition: width 0.3s ease; /* Animation timing */
+}
+
+/* Animation from left to right on hover */
+.nav-link:hover::after {
+  width: 100%;
+}
