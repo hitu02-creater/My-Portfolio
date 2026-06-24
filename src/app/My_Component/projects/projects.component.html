@@ -1,12 +1,12 @@
 <section id="projects" class="py-30 px-6 md:px-16 bg-[#131b2e]/30">
     <div class="max-w-7xl mx-auto px-6">
-
         <!-- Section Heading -->
         <div class="text-center mb-16">
-            <h2 class="font-['Space Grotesk'] text-center text-[28px] md:text-[42px] lg:text-[52px] 2xl:text-[60px] mb-6 text-glow">
+            <h2 class="font-['Space Grotesk'] text-[28px] md:text-[42px] lg:text-[52px] 2xl:text-[60px] mb-6 text-glow">
                 My Projects
             </h2>
-            <p class="font-['Inter'] text-[14px] md:text-[16px] lg:text-[18px] 2xl:text-[20px] text-[#bbc9cf] mb-12 text-justify">
+            <p
+                class="font-['Inter'] text-[14px] md:text-[16px] lg:text-[18px] 2xl:text-[20px] text-[#bbc9cf] mb-12 text-justify">
                 Projects showcasing my frontend development skills using Angular, React and modern web technologies.
             </p>
         </div>
@@ -14,39 +14,48 @@
         <!-- Projects Grid -->
         <div class="grid md:grid-cols-2 gap-8">
 
-            <div *ngFor="let project of projects"
+            @for (project of projects; track project.title) {
+            <div
                 class="glass-card p-8 md:p-10 rounded-4xl hover:-translate-y-2 transition-transform duration-500 group">
 
-                <!-- Icon -->
                 <div class="text-5xl mb-5">
                     {{ project.icon }}
                 </div>
 
-                <!-- Title -->
-                <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                <div
+                    class="absolute top-4 right-4 md:top-0 md:right-0 p-4 opacity-10 text-[45px] md:text-[55px] lg:text-[60px] font-bold">
+                    0{{$index + 1}}</div>
+
+
+                <h3 class="text-2xl font-bold text-[#bbc9cf] mb-6">
                     {{ project.title }}
                 </h3>
 
-                <!-- Description -->
-                <p class="text-slate-600 leading-relaxed mb-6">
+                <p class="text-[#bbc9cf] mb-6 leading-relaxed">
                     {{ project.description }}
                 </p>
 
-                <!-- Tech Stack -->
                 <div class="flex flex-wrap gap-2 mb-6">
-                    <span *ngFor="let tech of project.technologies"
-                        class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-                        {{ tech }}
-                    </span>
+                    <ul class="space-y-3 font-['JetBrains Mono'] text-[14px] lg:text-[16px] text-[#a4e6ff]">
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-[14px] lg:text-[16px]">check_circle</span>
+                            {{project.Checkbox1}} </li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-[14px] lg:text-[16px]">check_circle</span>
+                            {{project.Checkbox2}} </li>
+                        <li class="flex items-center gap-2"><span
+                                class="material-symbols-outlined text-[14px] lg:text-[16px]">check_circle</span>
+                            {{project.Checkbox3}} </li>
+                    </ul>
                 </div>
 
-                <!-- Button -->
-                <a [href]="project.link" target="_blank"
-                    class="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+                <a [href]="project.link" target="_blank" class="bg-[#00d1ff] text-[#00566a] font-['JetBrains Mono'] font-bold text-[12px] px-8 py-4 rounded-xl hover:shadow-[0_0_20px_rgba(0,209,255,0.4)] transition-all cursor-pointer
+                        md:text-[16px] lg:text-[18px]">
                     View Project
                     <span>→</span>
                 </a>
             </div>
+            }
         </div>
     </div>
 </section>
