@@ -11,7 +11,6 @@ export class AboutComponent implements OnInit {
   phrases = [
     "Frontend Developer",
     "Web Desinger",
-    "Creative Problem Solver"
   ]
 
   displayText= signal('');

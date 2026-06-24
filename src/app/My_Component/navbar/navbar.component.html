@@ -4,14 +4,21 @@
     <div class="w-100">
       <img src="Logo (2).png" alt="H.V Developer" class="w-full h-auto items-center bg-transparent" />
     </div>
-    <ul class="hidden md:flex gap-8 text-[12px] md:text-[14px] lg:text-[16px] 2xl:text-[16px] font-medium">
-      <li><a href="#home" class="nav-link active:text-cyan-400" [class.active]="activeSection === 'home'" (click)="setActiveSection('home')">HOME</a></li>
-      <li><a href="#about" class="nav-link" [class.active]="activeSection === 'about'" (click)="setActiveSection('about')">ABOUT</a></li>
-      <li><a href="#education" class="nav-link" [class.active]="activeSection === 'education'" (click)="setActiveSection('education')">EDUCATION</a></li>
-      <li><a href="#skills"class="nav-link" [class.active]="activeSection === 'skills'" (click)="setActiveSection('skills')">SKILLS</a></li>
-      <li><a href="#projects" class="nav-link" [class.active]="activeSection === 'projects'" (click)="setActiveSection('projects')">PROJECTS</a></li>
-      <li><a href="#services" class="nav-link" [class.active]="activeSection === 'services'" (click)="setActiveSection('services')">SERVICES</a></li>
-      <li><a href="#contact" class="nav-link" [class.active]="activeSection === 'contact'" (click)="setActiveSection('contact')">CONTACT</a></li>
+    <ul class="hidden md:flex gap-8 text-[12px] md:text-[14px] font-medium">
+      <li><a href="#home" class="nav-link active:text-cyan-400" [class.active]="activeSection === 'home'"
+          (click)="setActiveSection('home')">HOME</a></li>
+      <li><a href="#about" class="nav-link" [class.active]="activeSection === 'about'"
+          (click)="setActiveSection('about')">ABOUT</a></li>
+      <li><a href="#education" class="nav-link" [class.active]="activeSection === 'education'"
+          (click)="setActiveSection('education')">EDUCATION</a></li>
+      <li><a href="#skills" class="nav-link" [class.active]="activeSection === 'skills'"
+          (click)="setActiveSection('skills')">SKILLS</a></li>
+      <li><a href="#projects" class="nav-link" [class.active]="activeSection === 'projects'"
+          (click)="setActiveSection('projects')">PROJECTS</a></li>
+      <li><a href="#services" class="nav-link" [class.active]="activeSection === 'services'"
+          (click)="setActiveSection('services')">SERVICES</a></li>
+      <li><a href="#contact" class="nav-link" [class.active]="activeSection === 'contact'"
+          (click)="setActiveSection('contact')">CONTACT</a></li>
     </ul>
     <button (click)="toggleOption()"
       class="md:hidden text-cyan-400 text-[35px] leading-none focus:outline-none transition-transform duration-300"
