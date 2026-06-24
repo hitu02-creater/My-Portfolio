@@ -21,6 +21,7 @@ export class FooterComponent {
     { label: 'Home', url: '#home' },
     { label: 'Education', url: '#education' },
     { label: 'Skills', url: '#skills' },
+    { label: 'Projects', url: '#projects' },
     { label: 'Services', url: '#services' }
   ];
 
