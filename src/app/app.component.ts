@@ -5,6 +5,7 @@ import { AboutComponent } from './My_Component/about/about.component'
 import { EducationComponent } from './My_Component/education/education.component'
 import { SkillsComponent } from './My_Component/skills/skills.component'
 import { ServicesComponent } from './My_Component/services/services.component'
+import { ProjectsComponent } from "./My_Component/projects/projects.component";
 import { ContactComponent } from './My_Component/contact/contact.component'
 import { FooterComponent } from './My_Component/footer/footer.component'
 
@@ -13,8 +14,7 @@ import { FooterComponent } from './My_Component/footer/footer.component'
   imports: [NavbarComponent, HomeComponent, AboutComponent,
     EducationComponent, SkillsComponent,
     ServicesComponent, ContactComponent,
-    FooterComponent
-  ],
+    FooterComponent, ProjectsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
