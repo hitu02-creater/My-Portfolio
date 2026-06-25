@@ -22,7 +22,6 @@ export class FooterComponent {
     { label: 'Education', url: '#education' },
     { label: 'Skills', url: '#skills' },
     { label: 'Projects', url: '#projects' },
-    { label: 'Services', url: '#services' }
   ];
 
   socials: SocialLink[] = [

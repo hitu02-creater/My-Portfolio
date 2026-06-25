@@ -1,13 +1,92 @@
 import { Component } from '@angular/core';
 
+interface SkillCategory {
+  title: string;
+  subtitle: string;
+  skills: {
+    name: string;
+    icon: string;
+  }[];
+}
 @Component({
   selector: 'app-skills',
   imports: [],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })
-export class SkillsComponent {
-  
-  skills = ['Angular', 'TypeScript', 'Tailwind CSS', 'JavaScript', 'RXJS', 'Git', 'HTML5', 'SASS'];
 
+export class SkillsComponent {
+
+  categories: SkillCategory[] = [
+    {
+      title: 'Languages',
+      subtitle: 'Core technologies',
+      skills: [
+        {
+          name: 'TypeScript',
+          icon: 'typescript'
+        },
+        {
+          name: 'JavaScript',
+          icon: 'javascript'
+        },
+        {
+          name: 'HTML5',
+          icon: 'html5'
+        },
+        {
+          name: 'CSS3',
+          icon: 'css3'
+        }
+      ]
+    },
+
+    {
+      title: 'Frameworks',
+      subtitle: 'Frontend ecosystem',
+      skills: [
+        {
+          name: 'Angular',
+          icon: 'angularjs'
+        },
+        {
+          name: 'React',
+          icon: 'react'
+        },
+        {
+          name: 'Bootstrap',
+          icon: 'bootstrap'
+        },
+        {
+          name: 'Tailwind',
+          icon: 'tailwindcss'
+        }
+      ]
+    },
+
+    {
+      title: 'Tools',
+      subtitle: 'Development workflow',
+      skills: [
+        {
+          name: 'VS Code',
+          icon: 'vscode'
+        },
+        {
+          name: 'Git',
+          icon: 'git'
+        },
+        {
+          name: 'GitHub',
+          icon: 'github'
+        },
+        {
+          name: 'Netlify',
+          icon: 'netlify'
+        }
+      ]
+    }
+  ];
 }
+
+

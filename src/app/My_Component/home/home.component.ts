@@ -1,4 +1,7 @@
-import { Component, OnInit, signal , CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, 
+  OnInit, 
+  signal , 
+  CUSTOM_ELEMENTS_SCHEMA,AfterViewInit,} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,7 +17,6 @@ export class HomeComponent implements OnInit {
   phrases = [
     "Frontend Developer",
     "Web Desinger",
-    "Creative Problem Solver",
   ]
 
   displayText = signal('');
