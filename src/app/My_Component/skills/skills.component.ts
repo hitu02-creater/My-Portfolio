@@ -37,6 +37,10 @@ export class SkillsComponent {
         {
           name: 'CSS3',
           icon: 'css3'
+        },
+        {
+          name: 'SCSS',
+          icon: 'sass'
         }
       ]
     },
@@ -46,11 +50,11 @@ export class SkillsComponent {
       subtitle: 'Frontend ecosystem',
       skills: [
         {
-          name: 'Angular',
+          name: 'Angular JS',
           icon: 'angularjs'
         },
         {
-          name: 'React',
+          name: 'React JS',
           icon: 'react'
         },
         {
@@ -58,7 +62,7 @@ export class SkillsComponent {
           icon: 'bootstrap'
         },
         {
-          name: 'Tailwind',
+          name: 'TailwindCSS',
           icon: 'tailwindcss'
         }
       ]
