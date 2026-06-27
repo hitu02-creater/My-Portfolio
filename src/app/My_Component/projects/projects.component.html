@@ -2,15 +2,17 @@
     <div class="max-w-7xl mx-auto px-6">
 
         <div class="text-center mb-16">
-            <span class="text-cyan-400 uppercase tracking-widest text-[18px]">
+            <span
+                class="text-cyan-400 uppercase tracking-widest font-['JetBrains_Mono',monospace] text-[14px] md:text-[16px]">
                 Portfolio Showcase
             </span>
 
-            <h2 class="mt-3 text-5xl font-bold text-white">
+            <h2 class="font-['Space_Grotesk',sans-serif] mt-3 text-5xl font-bold text-white">
                 Featured Projects
             </h2>
 
-            <p class="mt-5 text-slate-300 max-w-3xl mx-auto text-lg">
+            <p
+                class="font-font-['JetBrains_Mono',monospace] italic mt-5 text-slate-300 max-w-3xl mx-auto text-[14px] md:text-[16px] lg:text-[18px]">
                 Crafting modern, responsive web applications with clean design and seamless user experiences.
             </p>
         </div>
@@ -29,15 +31,16 @@
                 <!-- Main Content -->
                 <div class="p-8">
 
-                    <span class="inline-block mb-4 px-4 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-sm">
+                    <span
+                        class="font-['JetBrains_Mono',monospace] inline-block mb-4 px-4 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-sm">
                         {{ project.category }}
                     </span>
 
-                    <h3 class="text-3xl font-bold text-white mb-4">
+                    <h3 class="font-['Space_Grotesk',sans-serif] text-3xl font-bold text-white mb-4">
                         {{ project.title }}
                     </h3>
 
-                    <p class="text-slate-300 leading-relaxed mb-6">
+                    <p class="font-['Inter',sans-serif] text-slate-300 leading-relaxed mb-6">
                         {{ project.description }}
                     </p>
 
@@ -45,17 +48,17 @@
                     <div class="flex justify-between items-center mt-6">
                         <div class="flex gap-4">
                             <a [href]="project.liveLink" target="_blank"
-                                class="px-6 py-3 rounded-xl bg-cyan-500 text-slate-900 font-semibold hover:bg-cyan-400 transition">
+                                class="font-['JetBrains_Mono',monospace] px-6 py-3 rounded-xl bg-cyan-500 text-slate-900 font-semibold hover:bg-cyan-400 transition">
                                 Live Demo →
                             </a>
 
                             <a [href]="project.githubLink" target="_blank"
-                                class="px-6 py-3 rounded-xl border border-slate-600 text-white hover:border-cyan-400 transition">
+                                class="font-['JetBrains_Mono',monospace] px-6 py-3 rounded-xl border border-slate-600 text-white hover:border-cyan-400 transition">
                                 GitHub
                             </a>
                         </div>
                         <button (click)="openDetails(project)"
-                            class="px-4 py-2 rounded-full cursor-pointer bg-cyan-500 text-slate-900 font-semibold hover:bg-cyan-400 transition">
+                            class="font-['JetBrains_Mono',monospace] px-4 py-2 rounded-full cursor-pointer bg-cyan-500 text-slate-900 font-semibold hover:bg-cyan-400 transition">
                             View Details →
                         </button>
                     </div>
@@ -77,16 +80,16 @@
 
                     </button>
 
-                    <h3 class="text-3xl font-bold text-cyan-400 mb-4">
+                    <h3 class="font-['Space_Grotesk',sans-serif] text-3xl font-bold text-cyan-400 mb-4">
                         {{ project.title }}
                     </h3>
 
-                    <p class="text-slate-300 leading-relaxed mb-6">
+                    <p class="font-['Inter',sans-serif] text-slate-300 leading-relaxed mb-6">
                         {{ project.longDescription }}
                     </p>
 
                     <div class="mb-6">
-                        <h4 class="text-cyan-400 font-semibold mb-3">
+                        <h4 class="font-['Space_Grotesk',sans-serif] text-cyan-400 font-semibold mb-3">
                             Key Features
                         </h4>
 
@@ -94,7 +97,7 @@
                         <div class="flex items-center space-y-2 gap-2">
                             <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
 
-                            <span class="text-slate-300 text-sm">
+                            <span class="font-['Inter',sans-serif] text-slate-300 text-sm mb-1">
                                 {{ feature }}
                             </span>
                         </div>
@@ -102,14 +105,14 @@
                     </div>
 
                     <div class="mb-6">
-                        <h4 class="text-cyan-400 font-semibold mb-3">
+                        <h4 class="font-['Space_Grotesk',sans-serif] text-cyan-400 font-semibold mb-3">
                             Technologies Used
                         </h4>
 
                         <div class="flex flex-wrap gap-2">
                             @for (tech of project.technologies; track tech) {
                             <span
-                                class="px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-cyan-300 text-sm">
+                                class="font-['Inter',sans-serif] px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-cyan-300 text-sm">
                                 {{ tech }}
                             </span>
                             }
@@ -117,17 +120,15 @@
                     </div>
 
                     <div>
-                        <h4 class="text-cyan-400 font-semibold mb-3">
+                        <h4 class="font-['Space_Grotesk',sans-serif] text-cyan-400 font-semibold mb-3">
                             Challenges Solved
                         </h4>
 
-                        <p class="text-slate-300">
+                        <p class="font-['JetBrains_Mono',monospace] text-slate-300">
                             {{ project.challenges }}
                         </p>
                     </div>
-
                 </div>
-
                 }
             </div>
             }

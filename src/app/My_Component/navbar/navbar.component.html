@@ -5,18 +5,19 @@
       <img src="Logo (2).png" alt="H.V Developer" class="w-full h-auto items-center bg-transparent" />
     </div>
     <ul class="hidden md:flex gap-8 text-[12px] md:text-[14px] font-medium">
-      <li><a href="#home" class="nav-link active:text-cyan-400" [class.active]="activeSection === 'home'"
-          (click)="setActiveSection('home')">HOME</a></li>
-      <li><a href="#about" class="nav-link" [class.active]="activeSection === 'about'"
-          (click)="setActiveSection('about')">ABOUT</a></li>
-      <li><a href="#education" class="nav-link" [class.active]="activeSection === 'education'"
-          (click)="setActiveSection('education')">EDUCATION</a></li>
-      <li><a href="#skills" class="nav-link" [class.active]="activeSection === 'skills'"
-          (click)="setActiveSection('skills')">SKILLS</a></li>
-      <li><a href="#projects" class="nav-link" [class.active]="activeSection === 'projects'"
-          (click)="setActiveSection('projects')">PROJECTS</a></li>
-      <li><a href="#contact" class="nav-link" [class.active]="activeSection === 'contact'"
-          (click)="setActiveSection('contact')">CONTACT</a></li>
+      <li><a href="#home"
+          class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem] hover:italic active:text-cyan-400"
+          [class.active]="activeSection === 'home'" (click)="setActiveSection('home')">HOME</a></li>
+      <li><a href="#about" class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem] hover:italic"
+          [class.active]="activeSection === 'about'" (click)="setActiveSection('about')">ABOUT</a></li>
+      <li><a href="#education" class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem] hover:italic"
+          [class.active]="activeSection === 'education'" (click)="setActiveSection('education')">EDUCATION</a></li>
+      <li><a href="#skills" class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem] hover:italic"
+          [class.active]="activeSection === 'skills'" (click)="setActiveSection('skills')">SKILLS</a></li>
+      <li><a href="#projects" class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem] hover:italic"
+          [class.active]="activeSection === 'projects'" (click)="setActiveSection('projects')">PROJECTS</a></li>
+      <li><a href="#contact" class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem] hover:italic"
+          [class.active]="activeSection === 'contact'" (click)="setActiveSection('contact')">CONTACT</a></li>
     </ul>
     <button (click)="toggleOption()"
       class="md:hidden text-cyan-400 text-[35px] leading-none focus:outline-none transition-transform duration-300"
@@ -28,12 +29,18 @@
   <div [ngClass]="isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'"
     class="absolute top-0 left-0 w-full bg-[#0d172d] -z-10 transition-all duration-500 ease-in-out md:hidden shadow-2xl">
     <ul class="flex flex-col items-center gap-6 py-24 text-[18px] font-semibold tracking-widest">
-      <li><a href="#home" (click)="closeMenu()" class="nav-link">HOME</a></li>
-      <li><a href="#about" (click)="closeMenu()" class="nav-link">ABOUT</a></li>
-      <li><a href="#education" (click)="closeMenu()" class="nav-link">EDUCATION</a></li>
-      <li><a href="#skills" (click)="closeMenu()" class="nav-link">SKILLS</a></li>
-      <li><a href="#projects" (click)="closeMenu()" class="nav-link">PROJECTS</a></li>
-      <li><a href="#contact" (click)="closeMenu()" class="nav-link">CONTACT</a></li>
+      <li><a href="#home" (click)="closeMenu()"
+          class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem]">HOME</a></li>
+      <li><a href="#about" (click)="closeMenu()"
+          class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem]">ABOUT</a></li>
+      <li><a href="#education" (click)="closeMenu()"
+          class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem]">EDUCATION</a></li>
+      <li><a href="#skills" (click)="closeMenu()"
+          class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem]">SKILLS</a></li>
+      <li><a href="#projects" (click)="closeMenu()"
+          class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem]">PROJECTS</a></li>
+      <li><a href="#contact" (click)="closeMenu()"
+          class="nav-link font-['JetBrains_Mono',monospace] tracking-[.2rem]">CONTACT</a></li>
     </ul>
   </div>
 </header>

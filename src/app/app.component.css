@@ -1,12 +1,1 @@
-@import "tailwindcss";
-
-.reveal {
-  opacity: 0;
-  transform: translateY(80px) scale(0.95);
-  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
+@import 'tailwindcss';
