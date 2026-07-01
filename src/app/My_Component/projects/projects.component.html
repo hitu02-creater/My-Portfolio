@@ -19,13 +19,14 @@
 
         <div class="grid lg:grid-cols-2 gap-10">
             @for (project of projects; track project.title){
-            <div
-                class="group relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/40 backdrop-blur-md transition-all duration-500 hover:-translate-y-3 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]">
+            <div class="group relative overflow-hidden rounded-3xl border border-slate-700 bg-slate-900/40 
+                backdrop-blur-md transition-all duration-500 hover:-translate-y-3
+                 hover:border-cyan-400 hover:shadow-[0_0_40px_rgba(34,211,238,0.25)]">
 
                 <!-- Project Image -->
                 <div class="overflow-hidden h-80">
                     <img [src]="project.image" [alt]="project.title"
-                        class="w-full h-full object-cover transition duration-700 group-hover:scale-100" />
+                        class="w-full h-full object-contain transition duration-700 group-hover:scale-100" />
                 </div>
 
                 <!-- Main Content -->

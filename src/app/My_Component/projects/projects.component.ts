@@ -44,7 +44,7 @@ export class ProjectsComponent {
       longDescription: "A modern,responsive portfolio website showcasing projects, skills, and achievements with smooth animations and an engaging user experience.",
 
       challenges: "Implemented responsive layouts, reusable components, smooth animations, and optimized performance across devices.",
-
+      
       liveLink:
         'https://hitu02-creater.github.io/My-Portfolio/',
 
@@ -79,7 +79,7 @@ export class ProjectsComponent {
       challenges: "Implemented budget management, expense tracking, analytics dashboards, and persistent data storage with the help of localStorage",
 
       liveLink:
-        'https://hitu02-creater.github.io/Budget_Web-Application/',
+        'https://budget-web-application-three.vercel.app/',
 
       githubLink:
         'https://github.com/hitu02-creater/Budget_Web-Application'

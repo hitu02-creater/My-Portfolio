@@ -85,8 +85,8 @@ export class SkillsComponent {
           icon: 'github'
         },
         {
-          name: 'Netlify',
-          icon: 'netlify'
+          name: 'Vercel',
+          icon: 'vercel'
         }
       ]
     }
