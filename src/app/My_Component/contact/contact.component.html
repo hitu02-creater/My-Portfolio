@@ -59,37 +59,40 @@
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label
-                                class="font-['JetBrains_Mono',monospace] text-[14px] md:text-[18px] lg:text-[20px] text-[#dae2fd] block mb-2">Name</label>
-                            <input
+                                class="font-['JetBrains_Mono',monospace] text-[14px] md:text-[18px] lg:text-[20px] text-[#dae2fd] block mb-2">
+                                Name</label>
+                            <input id="name"
                                 class="w-full bg-[#171f33] border border-[#3c494e]/30 rounded-xl px-4 py-3 focus:border-[#a4e6ff] focus:ring-1 focus:ring-[#a4e6ff] outline-none transition-all text-[#dae2fd]"
                                 placeholder="John Doe" type="text" />
                         </div>
                         <div>
                             <label
-                                class="font-['JetBrains_Mono',monospace] text-[16px] md:text-[18px] lg:text-[20px] text-[#dae2fd] block mb-2">Email</label>
-                            <input
+                                class="font-['JetBrains_Mono',monospace] text-[16px] md:text-[18px] lg:text-[20px] text-[#dae2fd] block mb-2">
+                                Email</label>
+                            <input id="email"
                                 class="w-full bg-[#171f33] border border-[#3c494e]/30 rounded-xl px-4 py-3 focus:border-[#a4e6ff] focus:ring-1 focus:ring-[#a4e6ff] outline-none transition-all text-[#dae2fd]"
                                 placeholder="john@example.com" type="email" />
                         </div>
                     </div>
                     <div>
                         <label
-                            class="font-['JetBrains_Mono',monospace] text-[16px] md:text-[18px] lg:text-[20px] text-[#dae2fd] block mb-2">Subject</label>
-                        <input
+                            class="font-['JetBrains_Mono',monospace] text-[16px] md:text-[18px] lg:text-[20px] text-[#dae2fd] block mb-2">
+                            Subject</label>
+                        <input id="subject"
                             class="w-full bg-[#171f33] border border-[#3c494e]/30 rounded-xl px-4 py-3 focus:border-[#a4e6ff] focus:ring-1 focus:ring-[#a4e6ff] outline-none transition-all text-[#dae2fd]"
                             placeholder="Project Inquiry" type="text" />
                     </div>
                     <div>
                         <label
                             class="font-['JetBrains_Mono',monospace] text-[16px] md:text-[18px] lg:text-[20px] text-[#dae2fd] block mb-2">Message</label>
-                        <textarea
+                        <textarea id="message"
                             class="w-full bg-[#171f33] border border-[#3c494e]/30 rounded-xl px-4 py-3 focus:border-[#a4e6ff] focus:ring-1 focus:ring-[#a4e6ff] outline-none transition-all text-[#dae2fd]"
                             placeholder="Tell me about your project..." rows="4"></textarea>
                     </div>
-                    <button
+                    <button (click)="submitForm()"
                         class="w-full h-10 bg-[#a4e6ff] text-[#003543] font-['Space_Grotesk',sans-serif] text-[16px] md:text-[18px] lg:text-[20px]
-                         rounded-4xl shadow-[0_0_20px_rgba(0,209,255,0.3)] hover:scale-[0.98] transition-all cursor-pointer"
-                        type="submit">Send Message</button>
+                         rounded-4xl shadow-[0_0_20px_rgba(0,209,255,0.3)] hover:scale-[0.98] transition-all cursor-pointer" type="submit">Send
+                        Message</button>
                 </form>
             </div>
         </div>

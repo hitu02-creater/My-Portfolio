@@ -64,7 +64,8 @@ export class ProjectsComponent {
         'React',
         'Tailwind CSS',
         'Recharts',
-        'LocalStorage'
+        'LocalStorage',
+        'Redux'
       ],
 
       features: [

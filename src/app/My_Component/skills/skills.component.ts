@@ -87,6 +87,10 @@ export class SkillsComponent {
         {
           name: 'Vercel',
           icon: 'vercel'
+        },
+        {
+          name: 'Redux',
+          icon: 'redux'
         }
       ]
     }
